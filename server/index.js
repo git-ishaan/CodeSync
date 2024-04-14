@@ -20,6 +20,16 @@ const getAllConnectedClients = (roomId) => {
   );
 };
 
+//create a api for / to know sevrer is started
+
+app.get("/", (req, res) => {
+  res.send("Server is running");
+}
+);
+
+
+
+
 io.on("connection", (socket) => {
   // console.log('Socket connected', socket.id);
   socket.on(ACTIONS.JOIN, ({ roomId, username }) => {
